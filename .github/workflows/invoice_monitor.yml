@@ -1,4 +1,4 @@
-name: Invoice Monitor — Daily Slack Alert
+name: Invoice Monitor Daily Slack Alert
 
 on:
   schedule:
@@ -9,8 +9,6 @@ jobs:
   monitor:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repo
