@@ -2,14 +2,15 @@ name: Invoice Monitor — Daily Slack Alert
 
 on:
   schedule:
-    # 4:00 PM IST = 10:30 AM UTC
     - cron: "30 10 * * *"
-  workflow_dispatch:  # allows manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
   monitor:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repo
@@ -26,5 +27,5 @@ jobs:
       - name: Run invoice monitor
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          GRAFANA_SESSION:   ${{ secrets.GRAFANA_SESSION }}
+          GRAFANA_SESSION: ${{ secrets.GRAFANA_SESSION }}
         run: python monitor.py
