@@ -2,7 +2,7 @@ name: Invoice Monitor Daily Slack Alert
 
 on:
   schedule:
-    - cron: "30 10 * * *"
+    - cron: "0 4 * * *"
   workflow_dispatch:
 
 jobs:
