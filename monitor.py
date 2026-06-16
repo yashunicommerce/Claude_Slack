@@ -4,8 +4,8 @@ import os
 import time
 from datetime import datetime, timedelta, timezone
 
-SLACK_WEBHOOK_URL  = os.environ["SLACK_WEBHOOK_URL"]
-GRAFANA_SESSION    = os.environ["GRAFANA_SESSION"]
+SLACK_WEBHOOK_URL  = "https://hooks.slack.com/services/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"
+GRAFANA_SESSION    = "821413edbc882c4f3eb6f6693300c5a7"
 ES_URL             = "https://uniwatch.unicommerce.com/db/api/datasources/proxy/114/_msearch?max_concurrent_shard_requests=100"
 
 FAILURE_RATE_THRESHOLD = 30
